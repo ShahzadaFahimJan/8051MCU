@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\sbit_task.obj" 
+TO ".\Objects\sbit_task" 
+PRINT(".\Listings\sbit_task.m51")

@@ -1,0 +1,72 @@
+C51 COMPILER V9.60.7.0   TASK2                                                             03/21/2024 12:18:30 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE TASK2
+OBJECT MODULE PLACED IN .\Objects\task2.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE task2.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\tas
+                    -k2.lst) TABS(2) OBJECT(.\Objects\task2.obj)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          #include <stdio.h>
+   3          sbit MYBIT=P1^2;
+   4          
+   5          void start_timer( );
+   6           void timer0() interrupt 1
+   7           {
+   8   1         
+   9   1        
+  10   1         if(MYBIT)
+  11   1         {
+  12   2           //delay of 1200 micro second or 1.2ms
+  13   2         TH0=0xFd;
+  14   2         TL0=0xA7;
+  15   2         }
+  16   1         
+  17   1         else
+  18   1         {
+  19   2           //delay of 800 microsecond
+  20   2         TH0=0xFE;
+  21   2         TL0=0x6F;
+  22   2         }
+  23   1      MYBIT = ~MYBIT;
+  24   1         
+  25   1       }
+  26           void init()
+  27           {
+  28   1         TR0=1;
+  29   1       }
+  30          void main(void)
+  31            
+  32          {
+  33   1        init();
+  34   1        start_timer();
+  35   1         while(1)
+  36   1       {
+  37   2       }
+  38   1      }
+  39           void start_timer()
+  40             
+  41           {
+  42   1           TMOD = 0x01;
+  43   1           IE=0x82;
+  44   1       }
+  45          
+  46               
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     38    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+C51 COMPILER V9.60.7.0   TASK2                                                             03/21/2024 12:18:30 PAGE 2   
+
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

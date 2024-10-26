@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\classtaskSectionB.obj" 
+TO ".\Objects\classtaskSectionB" 
+PRINT(".\Listings\classtaskSectionB.m51")

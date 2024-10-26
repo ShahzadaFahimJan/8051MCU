@@ -1,0 +1,38 @@
+C51 COMPILER V9.60.7.0   CLASSTASKSECTIONB                                                 02/27/2024 09:00:49 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE CLASSTASKSECTIONB
+OBJECT MODULE PLACED IN .\Objects\classtaskSectionB.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE classtaskSectionB.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\
+                    -Listings\classtaskSectionB.lst) TABS(2) OBJECT(.\Objects\classtaskSectionB.obj)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          sbit Mybit =P2^1;
+   3          void main(void)
+   4          {
+   5   1        unsigned int i;
+   6   1        for(i=0; i<=500; i++)
+   7   1        {
+   8   2          Mybit =0;
+   9   2          for(i=0; i<10000; i++);
+  10   2          for(i=0; i<10000; i++);
+  11   2          for(i=0; i<10000; i++);
+  12   2          Mybit =1;
+  13   2        }
+  14   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     61    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

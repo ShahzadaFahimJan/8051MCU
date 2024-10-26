@@ -1,0 +1,46 @@
+A51 MACRO ASSEMBLER  TASK3_PATTERN                                                        02/21/2024 21:40:23 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\task3_pattern.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE task3_pattern.a51 SET(SMALL) DEBUG PRINT(.\Listings\task3_pattern.lst) 
+                      OBJECT(.\Objects\task3_pattern.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000H
+0000                   2             HERE:
+0000 758001            3             MOV P0,#01H
+0003 1113              4             ACALL DELAY
+0005 758002            5             MOV P0,#02H
+0008 1113              6             ACALL DELAY
+000A 758004            7             MOV P0,#04H
+000D 1113              8             ACALL DELAY
+000F 80EF              9             SJMP HERE
+0011 7802             10             MOV R0,#2
+0013                  11             DELAY: 
+                      12             
+0013                  13             LOOP:
+0013 7903             14             MOV R1,#3
+0015 D9FC             15             DJNZ R1,LOOP
+0017 D8FA             16             DJNZ R0,DELAY
+0019 22               17             RET
+                      18             END
+A51 MACRO ASSEMBLER  TASK3_PATTERN                                                        02/21/2024 21:40:23 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+DELAY. . . . . . .  C ADDR   0013H   A   
+HERE . . . . . . .  C ADDR   0000H   A   
+LOOP . . . . . . .  C ADDR   0013H   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\task1_loop.obj" 
+TO ".\Objects\task1_loop" 
+PRINT(".\Listings\task1_loop.m51")

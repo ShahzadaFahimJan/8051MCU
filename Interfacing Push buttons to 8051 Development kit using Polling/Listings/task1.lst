@@ -1,0 +1,69 @@
+C51 COMPILER V9.60.7.0   TASK1                                                             02/25/2024 13:14:25 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE TASK1
+OBJECT MODULE PLACED IN .\Objects\task1.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE task1.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\tas
+                    -k1.lst) TABS(2) OBJECT(.\Objects\task1.obj)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          #include <stdio.h>
+   3          sbit led1=P1^0;
+   4          sbit led2=P1^1;
+   5          sbit led3=P1^2;
+   6          sbit led4=P1^3;
+   7          sbit switch1 =P2^1;
+   8          sbit switch2=P2^2;
+   9          void main(void)
+  10           { 
+  11   1        
+  12   1         while (1)
+  13   1         {
+  14   2           
+  15   2            if(switch1==1 & switch2==1)
+  16   2            {
+  17   3        // P1=0x00;
+  18   3         led1=1;//p0.0
+  19   3         led2=0;
+  20   3         led3=0;
+  21   3         led4=0;
+  22   3         
+  23   3            }
+  24   2           // P1=0x01;
+  25   2           else if(switch1==1 & switch2==0)
+  26   2            {
+  27   3        // P1=0x01;
+  28   3         led1=0;
+  29   3         led2=1;//p0.1
+  30   3         led3=0;
+  31   3         led4=0;
+  32   3         
+  33   3            } 
+  34   2            
+  35   2             else if(switch1==0 & switch2==1)
+  36   2            {
+  37   3         led1=0;
+  38   3         led2=0;
+  39   3         led3=1;//p0.2
+  40   3         led4=0;
+  41   3         
+  42   3            }
+  43   2            else
+  44   2            {
+  45   3        // P1=0x01;
+  46   3         led1=0;
+  47   3         led2=0;
+  48   3         led3=0;
+  49   3         led4=1;p0.3
+*** ERROR C202 IN LINE 49 OF task1.c: 'p0': undefined identifier
+*** ERROR C141 IN LINE 49 OF task1.c: syntax error near '.3', expected ';'
+  50   3            }
+*** ERROR C141 IN LINE 50 OF task1.c: syntax error near '}', expected ';'
+  51   2            }
+C51 COMPILER V9.60.7.0   TASK1                                                             02/25/2024 13:14:25 PAGE 2   
+
+  52   1         }
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  3 ERROR(S)

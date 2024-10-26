@@ -1,0 +1,44 @@
+C51 COMPILER V9.60.7.0   TASK3                                                             04/23/2024 09:01:28 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE TASK3
+OBJECT MODULE PLACED IN .\Objects\TASK3.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE TASK3.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\TAS
+                    -K3.lst) TABS(2) OBJECT(.\Objects\TASK3.obj)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          
+   3          unsigned int i, j;
+   4          
+   5          void delay(int time){
+   6   1        unsigned int k, l;
+   7   1        for(k = 0; k < time; k++)
+   8   1          for(l = 0; l < 1225; l++);
+   9   1      }
+  10          
+  11          void main(void){
+  12   1        while(1) {
+  13   2          // Loop 0 - 4
+  14   2          for(i = 0; i <= 9; i++) {
+  15   3            P1 = i;
+  16   3            delay(100);
+  17   3            
+  18   3          }
+  19   2        }
+  20   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     66    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      4    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

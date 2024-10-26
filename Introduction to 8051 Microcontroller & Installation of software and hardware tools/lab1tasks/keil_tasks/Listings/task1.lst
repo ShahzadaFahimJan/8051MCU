@@ -1,0 +1,52 @@
+A51 MACRO ASSEMBLER  TASK1                                                                02/02/2024 22:18:08 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\task1.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE task1.a51 SET(SMALL) DEBUG PRINT(.\Listings\task1.lst) OBJECT(.\Objects
+                      \task1.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     org  0000h      ; Set the origin (starting address) of the code to 0000h
+                       2         
+0000                   3     back:
+0000 7455              4         mov A, #55H ; Move the immediate value 55H into the accumulator A
+0002 F580              5         mov P0, A   ; Move the value in the accumulator A to the port P0
+0004 110E              6         ACALL DELAY ; Call a subroutine DELAY
+                       7        
+0006 74AA              8         mov A, #0AAH ; Move the immediate value 0AAH into the accumulator A
+0008 F580              9         mov P0, A   ; Move the value in the accumulator A to the port P0
+000A 110E             10         ACALL DELAY ; Call a subroutine DELAY
+                      11     
+000C 80F2             12         sjmp back   ; Unconditional jump to the label back (creating an infinite loop)
+                      13         
+000E                  14     DELAY:
+000E 7A1E             15         MOV R2, #30   ; Outer loop count
+0010                  16     DELAY_LOOP:
+0010 79FA             17         MOV R1, #250  ; Inner loop count
+0012                  18     INNER_LOOP:
+0012 D9FE             19         DJNZ R1, INNER_LOOP ; Decrement R1 and jump if not zero
+0014 DAFA             20         DJNZ R2, DELAY_LOOP ; Decrement R2 and jump if not zero
+0016 22               21         RET
+                      22        
+                      23     end            ;End of the code
+A51 MACRO ASSEMBLER  TASK1                                                                02/02/2024 22:18:08 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+BACK . . . . . . .  C ADDR   0000H   A   
+DELAY. . . . . . .  C ADDR   000EH   A   
+DELAY_LOOP . . . .  C ADDR   0010H   A   
+INNER_LOOP . . . .  C ADDR   0012H   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

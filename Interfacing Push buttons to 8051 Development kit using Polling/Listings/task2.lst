@@ -1,0 +1,50 @@
+C51 COMPILER V9.60.7.0   TASK2                                                             02/25/2024 13:01:40 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE TASK2
+OBJECT MODULE PLACED IN .\Objects\task2.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE task2.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\tas
+                    -k2.lst) TABS(2) OBJECT(.\Objects\task2.obj)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          #include <stdio.h>
+   3          sbit led1=P1^0;
+   4          sbit switch1 =P2^1;
+   5          void main(void)
+   6           { 
+   7   1        
+   8   1         while (1)
+   9   1         {
+  10   2           
+  11   2            if(switch1==0)
+  12   2            {
+  13   3        
+  14   3         led1=1;
+  15   3        
+  16   3         
+  17   3            }
+  18   2           
+  19   2          
+  20   2            else
+  21   2            {
+  22   3         led1=0;
+  23   3        
+  24   3            }
+  25   2            }
+  26   1         }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     11    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

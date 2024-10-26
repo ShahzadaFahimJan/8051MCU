@@ -1,0 +1,59 @@
+C51 COMPILER V9.60.7.0   TASK01                                                            05/20/2024 09:48:59 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE TASK01
+OBJECT MODULE PLACED IN .\Objects\task01.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE task01.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\ta
+                    -sk01.lst) TABS(2) OBJECT(.\Objects\task01.obj)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          #include <stdio.h>
+   3          #include<string.h>
+   4          void init();
+   5          unsigned int i;
+   6          char str[100];
+   7          void getbuf(char *str);
+   8          void showbuff(char dataa);
+   9          void main(void)
+  10          {
+  11   1      init();
+  12   1      getbuf("wellcome to lab");
+  13   1      while (1);
+  14   1      }
+  15          void init()
+  16          {
+  17   1      TMOD=0x20;
+  18   1      TH1=0xFD;
+  19   1      SCON=0x50;
+  20   1      TR1=1;
+  21   1      
+  22   1      }
+  23          void getbuf(char *str)
+  24          {
+  25   1      for(i=0; i<strlen(str);i++)
+  26   1      {
+  27   2      showbuff(str[i]);
+  28   2      }
+  29   1      }
+  30          void showbuff(char dataa)
+  31          {
+  32   1      SBUF=dataa;
+  33   1      while(TI==0);
+  34   1      TI=0;
+  35   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     93    ----
+   CONSTANT SIZE    =     16    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =    102       3
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

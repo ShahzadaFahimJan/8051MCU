@@ -1,0 +1,31 @@
+A51 MACRO ASSEMBLER  TASK1_LOOP                                                           02/17/2024 07:42:24 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\task1_loop.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE task1_loop.a51 SET(SMALL) DEBUG PRINT(.\Listings\task1_loop.lst) OBJECT
+                      (.\Objects\task1_loop.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000 7400              1     MOV A,#0
+0002 7A0A              2        MOV R2, #10
+0004 2403              3                AGAIN: ADD A,#03
+0006 DAFC              4            DJNZ R2,AGAIN
+0008 FD                5     MOV R5,A
+*** WARNING #A41 IN 5 (task1_loop.a51, LINE 5): MISSING 'END' STATEMENT
+A51 MACRO ASSEMBLER  TASK1_LOOP                                                           02/17/2024 07:42:24 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+AGAIN. . . . . . .  C ADDR   0004H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  1 WARNING(S), 0 ERROR(S)
